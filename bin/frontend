@@ -85,7 +85,7 @@ function createApplication(appName, path) {
     //
     // CSS
 
-    var cssNormalize = loadTemplate('css/_normalize.scss');
+    var cssNormalize = loadTemplate('css/normalize.scss');
     var cssReset = loadTemplate('css/reset.scss');
     var jadeIndex = loadTemplate('views/index.jade');
     // var css = loadTemplate('css/style.css');
