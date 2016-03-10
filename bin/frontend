@@ -88,6 +88,8 @@ function createApplication(appName, path) {
     var cssNormalize = loadTemplate('css/normalize.scss');
     var cssReset = loadTemplate('css/reset.scss');
     var jadeIndex = loadTemplate('views/index.jade');
+    var jsonReport = loadTemplate('report.json');
+
     // var css = loadTemplate('css/style.css');
     // var less = loadTemplate('css/style.less');
     // var stylus = loadTemplate('css/style.styl');
@@ -121,14 +123,14 @@ function createApplication(appName, path) {
         mkdir(path + '/lib/css');
 
         mkdir(path + '/src/views/', function(){
-          write(path + '/src/views/index.jade', jadeindex);
+          write(path + '/src/views/index.jade', jadeIndex);
         });
 
         mkdir(path + '/test/');
 
-        write(path + '', 'index.html');
-        write(path + '', 'report.json');
-        write(path + '', 'readme.md');
+        write(path + '/index.html', '');
+        write(path + '/report.json', jsonReport);
+        write(path + '/readme.md', '');
 
         //
         // mkdir(path + '/routes', function() {
