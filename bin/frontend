@@ -78,19 +78,21 @@ function createApplication(appName, path) {
     }
 
     // JavaScript
-      // var app = loadTemplate('js/app.js');
-      // var www = loadTemplate('js/www');
-      // var index = loadTemplate('js/routes/index.js');
-      // var users = loadTemplate('js/routes/users.js');
-      //
+    // var app = loadTemplate('js/app.js');
+    // var www = loadTemplate('js/www');
+    // var index = loadTemplate('js/routes/index.js');
+    // var users = loadTemplate('js/routes/users.js');
+    //
     // CSS
 
-    var scss = loadTemplate('css/_normalize.scss');
-      // var css = loadTemplate('css/style.css');
-      // var less = loadTemplate('css/style.less');
-      // var stylus = loadTemplate('css/style.styl');
-      // var compass = loadTemplate('css/style.scss');
-      // var sass = loadTemplate('css/style.sass');
+    var cssNormalize = loadTemplate('css/_normalize.scss');
+    var cssReset = loadTemplate('css/reset.scss');
+    var jadeIndex = loadTemplate('views/index.jade');
+    // var css = loadTemplate('css/style.css');
+    // var less = loadTemplate('css/style.less');
+    // var stylus = loadTemplate('css/style.styl');
+    // var compass = loadTemplate('css/style.scss');
+    // var sass = loadTemplate('css/style.sass');
 
     mkdir(path, function() {
 
@@ -106,18 +108,27 @@ function createApplication(appName, path) {
         mkdir(path + '/src/js');
         mkdir(path + '/src/img');
         mkdir(path + '/src/fonts');
-        mkdir(path + '/src/css', function(){
-          write(path + '/src/css/site.sass', '');
+        mkdir(path + '/src/css', function() {
+            write(path + '/src/css/site.sass', '');
         });
-        mkdir(path + '/src/css', function(){
-          write(path + '/src/css/site.sass', '');
-          write(path + '/src/css/_normalize.sass', scss);
+        mkdir(path + '/src/css', function() {
+            write(path + '/src/css/site.sass', '');
+            write(path + '/src/css/reset.sass', cssReset);
+            write(path + '/src/css/normalize.sass', cssNormalize);
         });
         mkdir(path + '/lib');
         mkdir(path + '/lib/js');
         mkdir(path + '/lib/css');
 
+        mkdir(path + '/src/views/', function(){
+          write(path + '/src/views/index.jade', jadeindex);
+        });
+
         mkdir(path + '/test/');
+
+        write(path + '', 'index.html');
+        write(path + '', 'report.json');
+        write(path + '', 'readme.md');
 
         //
         // mkdir(path + '/routes', function() {
@@ -177,12 +188,14 @@ function createApplication(appName, path) {
             version: '0.0.0',
             private: true,
             scripts: {
+                report: 'frontend-reporter report.json',
                 start: 'index.js'
             },
             dependencies: {
-                'gulp': '*'
+                'gulp': '*',
+                'frontend-reporter': 'git+https://github.com/osobrevilla/frontend-reporter.git'
             }
-        }
+        };
 
         switch (program.template) {
             case 'jade':
