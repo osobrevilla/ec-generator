@@ -1,0 +1,9 @@
+{
+    "logo": "http://mysite.com/logo",
+    "views": [{
+      "title": "MySite",
+      "url": "http://mysite.com/",
+      "maquetacion": false,
+      "frontend": false
+    }]
+}
