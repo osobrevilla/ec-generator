@@ -1,0 +1,20 @@
+{
+  "name": "frontend-generator",
+  "version": "1.0.0",
+  "description": "FrontEnd proyect generator",
+  "main": "bin/frontend",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Oscar Sobrevilla",
+  "license": "ISC",
+  "preferGlobal": true,
+  "bin": {
+    "frontend": "./bin/frontend"
+  },
+  "dependencies": {
+    "commander": "^2.9.0",
+    "mkdirp": "^0.5.1",
+    "sorted-object": "^1.0.0"
+  }
+}
