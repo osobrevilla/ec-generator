@@ -222,7 +222,7 @@ function createApplication(appName, path) {
         write(path + '/package.json', JSON.stringify(pkg, null, 2));
         write(path + '/assetsmap.json', '');
         write(path + '/gulpfile.js', gulpFile);
-        write(path + '/.gitignore', 'node_modules/');
+        write(path + '/.gitignore', 'node_modules');
 
         // if (program.git) {
         //     write(path + '/.gitignore', fs.readFileSync(__dirname + '/../templates/js/gitignore', 'utf-8'));
