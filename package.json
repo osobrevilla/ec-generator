@@ -1,8 +1,8 @@
 {
-  "name": "frontend-generator",
+  "name": "ec-generator",
   "version": "1.0.0",
-  "description": "FrontEnd proyect generator",
-  "main": "bin/frontend",
+  "description": "Ec proyect generator",
+  "main": "bin/ec-generator",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +10,7 @@
   "license": "ISC",
   "preferGlobal": true,
   "bin": {
-    "frontend": "./bin/frontend"
+    "ecgenerator": "bin/ec-generator"
   },
   "dependencies": {
     "commander": "^2.9.0",
